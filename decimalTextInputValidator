@@ -1,0 +1,22 @@
+$('.inputClass').on('keyup', function (e) {
+
+  var regex = /^[0-9.]+$/;
+  var currentValue = $(this).val();
+  var dotsAmount = currentValue.match(/\./g);
+  var decimalPlaces = currentValue.split('.')[1];
+  var correctedValue = currentValue.slice(0, -1);
+
+    if (regex.test(currentValue)) {
+        if (dotsAmount != null && dotsAmount.length !== 1) {
+            $(this).val(correctedValue);
+        } else {
+            if (decimalPlaces!= null && decimalPlaces.length >= 3) {
+                $(this).val(correctedValue);
+            } else {
+                $(this).val(currentValue);
+            }
+        }
+    } else {
+        $(this).val(correctedValue);
+    }      
+});
