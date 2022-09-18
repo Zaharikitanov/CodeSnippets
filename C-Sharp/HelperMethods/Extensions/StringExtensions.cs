@@ -53,5 +53,12 @@ namespace HelperMethods.Extensions
                 fileName,
                 validFileExtensions);
         }
+
+        public static bool IsValidUrl(this string webSiteUrl)
+        {
+            return Uri.TryCreate(webSiteUrl, UriKind.Absolute, out Uri uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp
+                  || uriResult.Scheme == Uri.UriSchemeHttps);
+        }
     }
 }
