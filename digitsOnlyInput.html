@@ -7,9 +7,9 @@
 $(function() {
     $('.inputClass').on('keyup', function (e) {
 
-		var reg = /^\d+$/;
+		var digitsOnlyRegex = /^\d+$/;
 
-		if (!reg.test(e.target.value)) {
+		if (!digitsOnlyRegex.test(e.target.value)) {
 			$(this).val(e.target.value.slice(0, -1));
 		}  
 	});
