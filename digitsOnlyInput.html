@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(function() {
+    $('.inputClass').on('keyup', function (e) {
+
+		var reg = /^\d+$/;
+
+		if (!reg.test(e.target.value)) {
+			$(this).val(e.target.value.slice(0, -1));
+		}  
+	});
+});
+
+</script>
+</head>
+
+<body>
+<input class="inputClass" type="text"/>
+</body>
+
+</html>
